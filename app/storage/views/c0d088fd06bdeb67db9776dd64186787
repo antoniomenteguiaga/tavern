@@ -1,0 +1,32 @@
+<?php $__env->startSection('content'); ?>
+<div class="small-12 columns">
+	<h1>Other's Characters</h1>
+	Here are the characters you've adventured with in the past. Y'know, just in case.
+	<center>
+		<table>
+			<tr>
+				<th>Character</th>
+				<th>Owner</th>
+				<th>Level</th>
+				<th>Class</th>
+				<th>Ruleset</th>
+				<th>Games</th>
+				<th>Options</th>
+			</tr>
+			<?php foreach($characters as $character): ?>
+			<tr>
+				<td><a href="#"><?php echo $character->name; ?></a></td>
+				<td><a href="#"><?php echo $character->user->username; ?></a></td>
+				<td><?php echo $character->level; ?></td>
+				<td><?php echo $character->class; ?></td>
+				<td><?php echo $character->rules; ?></td>
+				<td></td>
+				<td><button class="tiny">Favorite</button></td>
+			</tr>
+			<?php endforeach; ?>
+		</table>
+	</center>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

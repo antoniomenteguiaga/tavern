@@ -1,0 +1,80 @@
+/*
+Error: File to import not found or unreadable: foundation/functions.
+       Load path: /home/minty/Documents/tavern/scss
+        on line 58 of scss/_settings.scss
+        from line 1 of scss/app.scss
+
+53: 	background: image-url("wood4.jpg");
+54: }
+55: 
+56: #main_row{
+57: 	//background-color: $white;
+58: 	//background-color: $lightyellow;
+59: 	background-color: #F9F5D9;
+60: }
+61: 
+62: #side_bar{
+63: 	background-color:$darkyellow;
+
+Backtrace:
+scss/_settings.scss:58
+scss/app.scss:1
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/import_node.rb:45:in `import'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/import_node.rb:28:in `imported_file'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/import_node.rb:37:in `css_import?'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:301:in `visit_import'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/stack.rb:79:in `block in with_base'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/stack.rb:115:in `with_frame'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/stack.rb:79:in `with_base'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:315:in `block (2 levels) in visit_import'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:315:in `map'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:315:in `block in visit_import'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/stack.rb:88:in `block in with_import'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/stack.rb:115:in `with_frame'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/stack.rb:88:in `with_import'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:312:in `visit_import'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/stack.rb:79:in `block in with_base'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/stack.rb:115:in `with_frame'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/stack.rb:79:in `with_base'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `map'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/root_node.rb:36:in `css_tree'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:489:in `update_stylesheet'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:209:in `each'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:293:in `watch'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/plugin.rb:108:in `method_missing'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/exec/sass_scss.rb:370:in `watch_or_update'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/exec/sass_scss.rb:50:in `process_result'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/exec/base.rb:52:in `parse'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/lib/sass/exec/base.rb:19:in `parse!'
+/home/minty/.rvm/gems/ruby-head/gems/sass-3.4.5/bin/sass:13:in `<top (required)>'
+/home/minty/.rvm/gems/ruby-head/bin/sass:23:in `load'
+/home/minty/.rvm/gems/ruby-head/bin/sass:23:in `<main>'
+/home/minty/.rvm/gems/ruby-head/bin/ruby_executable_hooks:15:in `eval'
+/home/minty/.rvm/gems/ruby-head/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: foundation/functions.\A        Load path: /home/minty/Documents/tavern/scss\A         on line 58 of scss/_settings.scss\A         from line 1 of scss/app.scss\A \A 53: 	background: image-url(\"wood4.jpg\");\A 54: }\A 55: \A 56: #main_row{\A 57: 	//background-color: $white;\A 58: 	//background-color: $lightyellow;\A 59: 	background-color: #F9F5D9;\A 60: }\A 61: \A 62: #side_bar{\A 63: 	background-color:$darkyellow;"; }

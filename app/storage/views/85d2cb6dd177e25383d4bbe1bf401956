@@ -1,0 +1,65 @@
+<?php $__env->startSection('content'); ?>
+<div class="small-12 columns">
+	<h1>Accept and Reject Players</h1>
+	<center>
+		<table>
+			<tr>
+				<th>Player</th>
+				<th>Game</th>
+				<th>Rules</th>
+				<th>Genre</th>
+				<th>Match</th>
+				<th>Party Match</th>
+				<th># of Players</th>
+				<th>Max Players</th>
+				<th colspan="2">Options</th>
+			</tr>
+<?php echo Form::open(array('action'=>'DashboardController@postAcceptReject','method'=>'post')); ?>
+
+<?php foreach($games as $game): ?>
+<?php foreach($game->characters as $character): ?>
+<?php if($character->pivot["confirmed"] == "0"): ?>
+			<tr id="character-<?php echo $character->id; ?>-game-<?php echo $game->id; ?>">
+				<td><a href="<?php echo $character->user->id; ?>"><?php echo $character->user->username; ?></a></td>
+				<td><a href="<?php echo $game->id; ?>"><?php echo $game->game_title; ?></a></td>
+				<td><?php echo $game->rules_title; ?></td>
+				<td><?php echo $game->genre; ?></td>
+				<td><?php echo $character->user->playerMatch(Auth::id()); ?></td>
+				<td>73%</td>
+				<td><?php echo $game->curr_players; ?></td>
+				<td><?php echo $game->max_players; ?></td>
+				<td><button class="tiny success" type="submit" onClick="postAcceptReject(<?php echo $character->id; ?>,<?php echo $game->id; ?>,true)">Accept</button></td>
+				<td><button class="tiny alert"   type="submit" onClick="postAcceptReject(<?php echo $character->id; ?>,<?php echo $game->id; ?>,false)">Reject</button></td>
+			</tr>
+<?php endif; ?>
+<?php endforeach; ?>
+<?php endforeach; ?>
+<?php echo Form::close(); ?>
+
+		</table>
+	</center>
+</div>
+
+<script>
+function postAcceptReject(character_id, game_id, result){
+	event.preventDefault();
+	console.log('click');
+	$.ajax({
+		type:"POST",
+			url:$(this).prop('action'),
+data:{
+	"_token": $(this).find('input[name=_token]').val(),
+		"character_id": character_id,
+		"game_id": game_id,
+		"accept": result
+},
+success:function(data){
+	$("#character-"+data.character_id+"-game-"+data.game_id).remove();
+},
+	dataType:'json'});
+	return false;
+}
+</script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

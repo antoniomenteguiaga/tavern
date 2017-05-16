@@ -1,0 +1,142 @@
+@import "settings";
+@import "foundation";
+@import "compass";
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switch",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+$lightyellow : #F2EEB3;
+$darkyellow : #BFAF80;
+$yellowpurple : #8C6954;
+$darkpurple : #260126;
+$lightpurple : #59323C;
+
+body{
+	//background-color: $lightyellow;
+	//background-color: $yellowpurple;
+	background-color: #F1EBAD;
+	background: image-url("dark_wood.png");
+}
+
+#main_row{
+	//background-color: $white;
+	//background-color: $lightyellow;
+	background-color: #F9F5D9;
+}
+
+#side_bar{
+	background-color:$darkyellow;
+}
+
+.icon-beermug{
+	color: $darkyellow;
+}
+
+.fullWidth {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: initial;
+
+}
+
+div.game_card {
+	@include single-transition(border-color, 300ms, ease-in-out);
+	span, p, h1, h2, h3, h4, h5, h6, blockquote{color: $white;}
+	color: $white;
+	//background-color: $yellowpurple;
+	border: solid $darkpurple;
+	background-color: $darkpurple;
+	display: table;
+	padding: 2px;
+	padding-top: 10px;
+	padding-left: 10px;
+	margin-bottom: 10px;
+}
+
+div.game_card.local{
+	background-color: $lightpurple;
+	border: solid $lightpurple;
+}
+
+div.game_card:hover{
+	border: solid $yellowpurple;
+}
+
+div.game_card.local:hover{
+	border: solid $jet;
+}
+
+div.player_card_light{
+	padding-top: 5px;
+	background-color: $darkyellow;
+}
+
+div.player_card_clicked{
+	span, p, h1, h2, h3, h4, h5, h6, blockquote{color: $white;}
+	padding-top: 5px;
+	background-color: $darkpurple;
+}
+
+div.player_card {
+	@include single-transition(border-color, 300ms, ease-in-out);
+	span, p, h1, h2, h3, h4, h5, h6, blockquote{color: $white;}
+	color: $white;
+	border: solid $darkpurple;
+	background-color: $darkpurple;
+	display:table-cell;
+	margin-bottom: 2px;
+}
+
+div.player_card.local{
+	background-color: $lightpurple;
+	border: solid $lightpurple;
+}
+
+div.player_card:hover{
+	border: solid $yellowpurple;
+}
+
+div.player_card.local:hover{
+	border: solid $jet;
+}
+
+.navbar_login{
+	@include button($bg: $darkyellow);
+	height:1.8rem;
+}

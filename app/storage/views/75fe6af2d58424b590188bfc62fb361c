@@ -1,0 +1,65 @@
+<?php $__env->startSection('content'); ?>
+<div class="small-12 columns">
+	<h1><?php echo $character->name; ?> <small>The <?php echo empty($character->class)?"Classless":$character->class; ?></small>
+<?php if(Auth::check() and $character->user->id === Auth::id()): ?>
+<a href="<?php echo action('CharacterController@edit',$character->id); ?>" class="right">&#9881;</a>
+<?php endif; ?>
+</h1>
+	<div class="medium-3 large-2 columns">
+		<div class="row">
+<?php echo $character->displayArt(); ?>
+
+		</div>
+		<div class="row">
+			<div class="small-6 medium-12 columns">
+				<b>Character Sheets</b>
+				<ul>
+<?php foreach($character->characterSheets as $sheet): ?>
+<li><a href="<?php echo asset($sheet->location()); ?>"><?php echo $sheet->name; ?></a></li>
+<?php endforeach; ?>
+				</ul>
+			</div>
+			<div class="small-6 medium-12 columns">
+				<b>Character Images</b>
+				<ul>
+<?php foreach($character->characterArts as $sheet): ?>
+<li><a href="<?php echo $sheet->location(); ?>"><?php echo empty($sheet->name)?"Untitled Picture":$sheet->name; ?></a></li>
+<?php endforeach; ?>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="medium-9 large-6 columns">
+		<?php echo Markdown::render(empty($character->biography)?"No backstory?! Someone should tell ".$character->user->username." to write one!":$character->biography); ?>
+
+	</div>
+	<div class="large-4 columns">
+		<div class="row">
+			<div class="small-6 columns">
+				<p>Owned by <?php echo link_to_action('UsersController@getProfile',$character->user->username,$character->user->id); ?></p>
+			</div>
+			<div class="small-6 columns">
+				<button>Favorite</button>
+			</div>
+		</div>
+		<h2>Game History</h2>
+		<table>
+			<tr>
+				<th>Game</th>
+				<th>Participation Time</th>
+				<th>Ruleset</th>
+			</tr>
+			<?php foreach($character->gameHistory as $game): ?>
+			<tr>
+				<td><?php echo $game->game_title; ?></td>
+				<td><?php echo $game->created_at->diffForHumans(\Carbon\Carbon::now()); ?></td>
+				<td><?php echo $game->rules_title; ?></td>
+			</tr>
+			<?php endforeach; ?>
+		</table>
+		<small>* Currently Participating in</small>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

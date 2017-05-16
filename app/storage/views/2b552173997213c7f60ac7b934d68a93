@@ -1,0 +1,264 @@
+<?php session_start(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+
+<div class="small-12 columns">
+<!-- Menu start -->
+<DIV ID="navigation">
+
+    <IMG SRC="/images/ihobologo.jpg" ALT="International Hobo - Logo" BORDER="0" ALIGN="middle"> 
+
+</DIV>
+<!-- Menu end -->
+
+<!-- Content start -->
+<DIV ID="content">
+	<A NAME="top"></A>
+
+	
+	
+<!-- questions section start -->
+<DIV ID="questions">
+
+		<FORM method="POST" action="personal.php" NAME="BrainHex_Survey">
+
+		<INPUT TYPE="hidden" NAME="recipient" VALUE="1">
+		<INPUT TYPE="hidden" NAME="subject" VALUE="BrainHex Questionnaire">
+
+<!-- this will hide the section if all questions answered -->		
+
+<H2>Part 1: About You</H2>
+
+<DIV CLASS="instructions">
+<strong>Instructions</strong>
+<P>
+This is the first of 4 pages of questions.<br>
+This page asks about you and your gaming habits.
+</div>
+
+<P>
+<DIV CLASS="
+">
+<strong>Year of birth: </strong>
+<select name='intDOB' size='1'>
+	<option>---</option>
+	<option>2000</option>
+	<option>1999</option>
+	<option>1998</option>
+	<option>1997</option>
+	<option>1996</option>
+	<option>1995</option>
+	<option>1994</option>
+	<option>1993</option>
+	<option>1992</option>
+	<option>1991</option>
+	<option>1990</option>
+	<option>1989</option>
+	<option>1988</option>
+	<option>1987</option>
+	<option>1986</option>
+	<option>1985</option>
+	<option>1984</option>
+	<option>1983</option>
+	<option>1982</option>
+	<option>1981</option>
+	<option>1980</option>
+	<option>1979</option>
+	<option>1978</option>
+	<option>1977</option>
+	<option>1976</option>
+	<option>1975</option>
+	<option>1974</option>
+	<option>1973</option>
+	<option>1972</option>
+	<option>1971</option>
+	<option>1970</option>
+	<option>1969</option>
+	<option>1968</option>
+	<option>1967</option>
+	<option>1966</option>
+	<option>1965</option>
+	<option>1964</option>
+	<option>1963</option>
+	<option>1962</option>
+	<option>1961</option>
+	<option>1960</option>
+	<option>1959</option>
+	<option>1958</option>
+	<option>1957</option>
+	<option>1956</option>
+	<option>1955</option>
+	<option>1954</option>
+	<option>1953</option>
+	<option>1952</option>
+	<option>1951</option>
+	<option>1950</option>
+	<option>1949</option>
+	<option>1948</option>
+	<option>1947</option>
+	<option>1946</option>
+	<option>1945</option>
+	<option>1944</option>
+	<option>1943</option>
+	<option>1942</option>
+	<option>1941</option>
+	<option>1940</option>
+	<option>1939</option>
+	<option>1938</option>
+	<option>1937</option>
+	<option>1936</option>
+	<option>1935</option>
+	<option>1934</option>
+	<option>1933</option>
+	<option>1932</option>
+	<option>1931</option>
+	<option>1930</option>
+	<option>1929</option>
+	<option>1928</option>
+	<option>1927</option>
+	<option>1926</option>
+	<option>1925</option>
+	<option>1924</option>
+	<option>1923</option>
+	<option>1922</option>
+	<option>1921</option>
+	<option>1920</option>
+	<option>1919</option>
+	<option>1918</option>
+	<option>1917</option>
+	<option>1916</option>
+	<option>1915</option>
+	<option>1914</option>
+	<option>1913</option>
+	<option>1912</option>
+	<option>1911</option>
+	<option>1910</option>
+	<option>1909</option>
+	<option>1908</option>
+	<option>1907</option>
+	</select>
+</DIV>
+<P>
+<DIV CLASS="
+">
+<strong>Gender: </strong><br>
+<INPUT TYPE="radio" NAME="txtGender" VALUE="Female" id="txtGenderFemale" ><label for="txtGenderFemale">Female</label><BR>
+<INPUT TYPE="radio" NAME="txtGender" VALUE="Male" id="txtGenderMale" ><label for="txtGenderMale">Male</label><BR>
+</div>
+
+<P>
+<DIV CLASS="
+">
+<strong>Geographical Territory:</strong><br>
+<INPUT TYPE="radio" NAME="" VALUE="North America" id="North America" ><label for="North America">North America</label><br>
+<INPUT TYPE="radio" NAME="" VALUE="South and Central America" id="South and Central America" ><label for="South and Central America">Southern or Central America</label><br>
+<INPUT TYPE="radio" NAME="" VALUE="Western Europe or UK" id="Western Europe or UK" ><label for="Western Europe or UK">Western Europe or UK</label><br>
+<INPUT TYPE="radio" NAME="" VALUE="Eastern Europe or Russia" id="Eastern Europe or Russia" ><label for="Eastern Europe or Russia">Eastern Europe or Russia</label><br>
+<INPUT TYPE="radio" NAME="" VALUE="South Asia" ><label for="South Asia (incl. China, India and Japan)">South Asia (incl. China, India and Japan)</label><br>
+<INPUT TYPE="radio" NAME="" VALUE="Africa" id="Africa" ><label for="Africa">Africa</label><br>
+<INPUT TYPE="radio" NAME="" VALUE="Middle East" id="Middle East" ><label for="Middle East">Middle East</label><br>
+<INPUT TYPE="radio" NAME="" VALUE="Australasia" id="Australasia" ><label for="Australasia">Australasia</label><br>
+<INPUT TYPE="radio" NAME="" VALUE="Other" id="Other" ><label for="Other">Other</label><br>
+</DIV>
+<P>
+<DIV CLASS="
+">
+<strong>I typically play computer or videogames</strong><br>
+<INPUT TYPE="radio" NAME="txtFrequencyOfPlay" VALUE="Every day" id="txtFrequencyOfPlayEvery day" ><label for="txtFrequencyOfPlayEvery day">Every day</label><br>
+<INPUT TYPE="radio" NAME="txtFrequencyOfPlay" VALUE="Every week" id="txtFrequencyOfPlayEvery week" ><label for="txtFrequencyOfPlayEvery week">Every week</label><br>
+<INPUT TYPE="radio" NAME="txtFrequencyOfPlay" VALUE="Occasionally" id="txtFrequencyOfPlayOccasionally" ><label for="txtFrequencyOfPlayOccasionally">Occasionally</label><br>
+<INPUT TYPE="radio" NAME="txtFrequencyOfPlay" VALUE="Rarely" id="txtFrequencyOfPlayRarely" ><label for="txtFrequencyOfPlayRarely">Rarely</label><br>
+<input type="radio" NAME="txtFrequencyOfPlay" VALUE="Never" id="txtFrequencyOfPlayNever" ><label for="txtFrequencyOfPlayNever">Never</label><br>
+</DIV>
+<P>
+<DIV CLASS="
+">
+<strong>I would consider myself</strong><br>
+<INPUT TYPE="radio" NAME="txtTypeOfGamer" VALUE="Hardcore gamer" id="txtTypeOfGamerHardcore gamer" ><label for="txtTypeOfGamerHardcore gamer">Hardcore gamer</label><br>
+<INPUT TYPE="radio" NAME="txtTypeOfGamer" VALUE="Midcore gamer" id="txtTypeOfGamerMidcore gamer" ><label for="txtTypeOfGamerMidcore gamer">something between a Hardcore and a Casual gamer</label><br>
+<INPUT TYPE="radio" NAME="txtTypeOfGamer" VALUE="Casual gamer" id="txtTypeOfGamerCasual gamer" ><label for="txtTypeOfGamerCasual gamer">Casual gamer</label><br>
+<INPUT TYPE="radio" NAME="txtTypeOfGamer" VALUE="I have no idea!" id="txtTypeOfGamerI have no idea!" ><label for="txtTypeOfGamerI have no idea!">I have no idea!</label>
+</DIV>
+<P>
+<DIV CLASS="
+">
+<strong>I work in:</strong><br>
+<INPUT TYPE="radio" NAME="txtIndustry" VALUE="a non-videogames related industry" id="txtIndustry nonvideogames" ><label for="txtIndustry nonvideogames">a non-videogames related industry (or I don't work/am a student)</label><br>
+<INPUT TYPE="radio" NAME="txtIndustry" VALUE="videogame development" id="txtIndustry videogame development" ><label for="txtIndustry videogame development">videogame development</label><br>
+<INPUT TYPE="radio" NAME="txtIndustry" VALUE="videogame publishing" id="txtIndustry videogamepublishing" ><label for="txtIndustry videogamepublishing">videogame publishing</label><br>
+<INPUT TYPE="radio" NAME="txtIndustry" VALUE="videogame retail" id="txtIndustry videogame retail" ><label for="txtIndustry videogame retail">videogame retail</label><br>
+<INPUT TYPE="radio" NAME="txtIndustry" VALUE="videogame press" id="txtIndustry videogame press" ><label for="txtIndustry videogame press">videogame press</label><br>
+<INPUT TYPE="radio" NAME="txtIndustry" VALUE="videogame other" id="txtIndustry videogame other" ><label for="txtIndustry videogame other">videogames in some other context (e.g. research)</label><br>
+</DIV>
+<P>
+<DIV CLASS="
+">
+<strong>I prefer the following way of playing games:</strong><br>
+<INPUT TYPE="radio" NAME="txtWayIPlay" VALUE="Single player alone" id="txtWayIPlaySingle player alone" ><label for="txtWayIPlaySingle player alone">Single player alone</label><br>
+<INPUT TYPE="radio" NAME="txtWayIPlay" VALUE="Single player with others" id="txtWayIPlaySingle player with others" ><label for="txtWayIPlaySingle player with others">Single player with other people helping or pad-passing</label><br>
+<INPUT TYPE="radio" NAME="txtWayIPlay" VALUE="Multiplayer, in the same room" id="txtWayIPlayMultiplayer, in the same room" ><label for="txtWayIPlayMultiplayer, in the same room">Multiplayer, in the same room</label><br>
+<INPUT TYPE="radio" NAME="txtWayIPlay" VALUE="Multiplayer, over the internet" id="txtWayIPlayMultiplayer, over the internet" ><label for="txtWayIPlayMultiplayer, over the internet">Multiplayer, over the internet</label><br>
+<INPUT TYPE="radio" NAME="txtWayIPlay" VALUE="Team play or Clan play over the internet" id="txtWayIPlayTeam play or Clan play over the internet" ><label for="txtWayIPlayTeam play or Clan play over the internet">Team play or Clan play over the internet</label><br>
+<INPUT TYPE="radio" NAME="txtWayIPlay" VALUE="Virtual worlds or MMORPGs" id="txtWayIPlayVirtual worlds or MMORPGs" ><label for="txtWayIPlayVirtual worlds or MMORPGs">Virtual worlds or MMORPGs</label>
+</DIV>
+<P>
+<DIV CLASS="
+">
+<strong>My attitude to videogame stories is:</strong><br>
+<INPUT TYPE="radio" NAME="txtAttitude" VALUE="Stories are very important to my enjoyment of videogames" id="txtAttitudeStories are very important to my enjoyment of videogames" ><label for="txtAttitudeStories are very important to my enjoyment of videogames">Stories are very important to my enjoyment of videogames</label><br>
+<INPUT TYPE="radio" NAME="txtAttitude" VALUE="Stories can help me enjoy a videogame" id="txtAttitudeStories can help me enjoy a videogame" ><label for="txtAttitudeStories can help me enjoy a videogame">Stories can help me enjoy a videogame</label><br>
+<INPUT TYPE="radio" NAME="txtAttitude" VALUE="Stories are not important to me in videogames" id="txtAttitudeStories are not important to me in videogames" ><label for="txtAttitudeStories are not important to me in videogames">Stories are not important to me in videogames</label><br>
+<INPUT TYPE="radio" NAME="txtAttitude" VALUE="I prefer videogames without stories" id="txtAttitudeI prefer videogames without stories" ><label for="txtAttitudeI prefer videogames without stories">I prefer videogames without stories</label><br>
+<INPUT TYPE="radio" NAME="txtAttitude" VALUE="I don't play videogames" id="txtAttitudeI don't play videogames" ><label for="txtAttitudeI don't play videogames">I don't play videogames</label>
+</DIV>
+<P>
+
+<DIV CLASS="
+">
+<strong>Name three games that exemplify what you enjoy about games (these don't have to be videogames - any game you enjoy counts):</strong><br>
+<INPUT TYPE="text" NAME="txtGame1" SIZE="30" MAXLENGTH="50" ><BR>
+<INPUT TYPE="text" NAME="txtGame2" SIZE="30" MAXLENGTH="50" ><BR>
+<INPUT TYPE="text" NAME="txtGame3" SIZE="30" MAXLENGTH="50" ><BR>
+</DIV>
+<P>
+<DIV CLASS="
+">
+<strong>I live with, and/or like living with:</strong><br>
+<INPUT TYPE="radio" NAME="txtPets" VALUE="Cats" id="txtPetsCats" ><label for="txtPetsCats">a cat or cats</label><br>
+<INPUT TYPE="radio" NAME="txtPets" VALUE="Dogs" id="txtPetsDogs" ><label for="txtPetsDogs">a dog or dogs</label><br>
+<INPUT TYPE="radio" NAME="txtPets" VALUE="Cat and Dog" id="txtPetsCat and Dog" ><label for="txtPetsCat and Dog">both cats and dogs</label><br>
+<input type="radio" NAME="txtPets" VALUE="Neither" id="txtPetsNeither" ><label for="txtPetsNeither">neither</label><br>
+</DIV>
+<P>
+
+<strong><em>Optional:</em><br>
+If you know your Myers-Briggs Type, please select it here: </strong><br>
+	<select name='txtMBTI' size='1'>
+	<option>-</option>
+	<option>ESFP</option>
+	<option>ESFJ</option>
+	<option>ESTP</option>
+	<option>ESTJ</option>
+	<option>ENFP</option>
+	<option>ENFJ</option> 
+	<option>ENTP</option>
+	<option>ENTJ</option>
+	<option>ISFP</option>
+	<option>ISFJ</option>
+	<option>ISTP</option>
+	<option>ISTJ</option>
+	<option>INFP</option>
+	<option>INFJ</option>
+	<option>INTP</option>
+	<option>INTJ</option>
+	</select>
+</DIV>
+
+<P>
+<!-- questions section end -->
+</div>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

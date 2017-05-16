@@ -1,0 +1,108 @@
+<?php $__env->startSection('content'); ?>
+<?php echo Form::open(array('action'=>'GameController@store')); ?>
+
+<div class="medium-6 large-4 columns">
+	<h1>Add a game</h1>
+	<label>Game Name</label><input type="text" name="name" required>
+	<label>Game Title</label>
+	<input list="game_titles" type="text" name="ruleset">
+	<datalist id="game_titles">
+		<option>Dungeons and Dragons 1e</option>
+		<option>Dungeons and Dragons 2e</option>
+		<option>Dungeons and Dragons 3.5e</option>
+		<option>Dungeons and Dragons 4e</option>
+		<option>Dungeons and Dragons Next</option>
+		<option>Pathfinder</option>
+		<option>Dark Heresy</option>
+		<option>Only War</option>
+		<option>Black Crusade</option>
+		<option>Warhammer Fantasy</option>
+		<option>L5R</option>
+		<option>Paranoia</option>
+	</datalist>
+	<label>Genre</label>
+	<input list="genre_list" type="text" name="genre">
+					<datalist id="genre_list">
+						<option>Fantasy</option>
+						<option>Cyberpunk</option>
+						<option>Modern</option>
+						<option>Parody</option>
+						<option>Anime</option>
+					</datalist>
+	<label>First Game</label><input type="datetime-local" name="next_game">
+	<div class="row collapse">
+		<label>Starting Level</label>
+		<div class="small-3 columns">
+			<span class="prefix">Level</span>
+		</div>
+		<div class="small-9 columns">
+			<input type="number" name="starting_level">
+		</div>
+	</div>
+	<div class="row collapse">
+		<label>Max Players</label>
+		<div class="small-9 columns">
+			<input type="number" name="max_players">
+		</div>
+		<div class="small-3 columns">
+			<span class="postfix">Players</span>
+		</div>
+	</div>
+	<label>Game Description</label>
+	<textarea name="description"></textarea>
+	<label>Location</label>
+	<select name="location">
+		<option disabled>My Locations</option>
+		<option value="1">Online</option>
+		<?php foreach(Auth::user()->locations as $location): ?>
+		<option value="<?php echo $location->id; ?>"><?php echo $location->address; ?></option>
+		<?php endforeach; ?>
+		<option disabled>Public Locations</option>
+		<?php foreach(DB::table('locations')->whereNull('user_id')->whereNotIn('id',array(1))->get() as $location): ?>
+		<option value="<?php echo $location->id; ?>"><?php echo $location->address; ?></option>
+		<?php endforeach; ?>
+	</select>
+
+	<input type="submit" class="button expand show-for-medium-up">
+</div>
+<div class="medium-6 large-8 columns">
+	<h2>Invite Players</h2>
+	<ul class="large-block-grid-4">
+		<?php foreach($players as $player): ?>
+		<li>
+		<div class="player_card_light" id="player_<?php echo $player->id; ?>" onclick="checkPlayer(<?php echo $player->id; ?>)">
+			<center>
+				<?php echo $player->getGravatar(100); ?>
+
+			</center>
+			<div class="row collapse">
+				<div class="small-6 columns">
+					<span><b><?php echo $player->username; ?></b></span>
+				</div>
+				<div class="small-6 columns">
+					<span class="right"><?php echo $player->playerMatch(Auth::id()); ?><span>
+						</div>
+					</div>
+					<div class="row collapse">
+						<span><?php echo $player->location->city; ?>, 
+							<?php echo $player->location->state; ?></span>
+					</div>
+					<input id="player_checkbox_<?php echo $player->id; ?>" name="player[<?php echo $player->id; ?>]" type="checkbox" class="hide">
+				</div>
+				</li>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+		<input type="submit" class="button expand hide-for-medium-up">
+		<?php echo Form::close(); ?>
+
+		<script>
+function checkPlayer(number){
+	$('#player_'+number).toggleClass('player_card_light');
+	$('#player_'+number).toggleClass('player_card_clicked');
+	$('#player_checkbox_'+number).prop("checked", !($('#player_checkbox_'+number).prop("checked")));
+}
+		</script>
+		<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

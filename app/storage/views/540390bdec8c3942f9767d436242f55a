@@ -1,0 +1,105 @@
+<?php $__env->startSection('content'); ?>
+<div class="small-12 columns">
+	<h1><?php echo $user->username; ?> <small>the Player</small>
+		<?php if(Auth::check()): ?>
+		<span class="right"><?php echo $user->playerMatch(Auth::id()); ?></span>
+		<?php endif; ?>
+	</h1>
+	<div class="medium-3 large-2 columns">
+		<div class="row">
+			<center>
+				<?php echo $user->getGravatar(); ?>
+
+			</center>
+		</div>
+		<div class="row">
+			<ul class="no-bullet">
+				<li class="email"><a href="mailto:<?php echo $user->email; ?>"><?php echo $user->email; ?></a></li>
+				<?php if(isset($user->address) && !empty($user->address)): ?>
+				<li class="street-address"><?php echo e(isset($user->address) ? $user->address : "Nowhere"); ?></li>
+				<?php endif; ?>
+				<?php if(isset($user->city) && !empty($user->city)): ?>
+				<li class="city"><?php echo e(isset($user->city) ? $user->city : "No City"); ?></li>
+				<?php endif; ?>
+				<?php if(isset($user->state) && !empty($user->state) && isset($user->zip) && !empty($user->zip)): ?>
+				<li><span class="state"><?php echo e(isset($user->state) ? $user->state : "No State"); ?></span>, <span class="zip"><?php echo e(isset($user->zip) ? $user->zip : 90210); ?></span></li>
+				<?php endif; ?>
+				<?php if(isset($user->country) && !empty($user->country)): ?>
+				<li class="country"><?php echo e(isset($user->country) ? $user->country : "No country"); ?></li>
+				<?php endif; ?>
+			</ul>
+		</div>
+	</div>
+	<div class="medium-9 large-5 columns">
+		<div class="row">
+			<h2>The Technical Stuff</h2>
+			<div class="small-6 columns">
+				<ul class="no-bullet">
+					<li>DOB: <?php echo $user->dob; ?></li>
+					<?php if(isset($user->favorite_game) && !empty($user->favorite_game)): ?>
+					<li>Favorite Game: <?php echo $user->favorite_game; ?></li>
+					<?php endif; ?>
+				</ul>
+			</div>
+			<div class="small-6 columns">
+				<b>BrainHex Results</b>
+				<ul class="small-block-grid-2 small-text-center">
+					<?php if(!empty($user->brain_hex_primary) and $user->brain_hex_primary != "None"): ?>
+					<li><?php echo HTML::image("images/brainhex_icons/".$user->brain_hex_primary.".png",$user->brain_hex_primary); ?><br><?php echo e($user->brain_hex_primary); ?></li>
+					<?php endif; ?>
+					<?php if(!empty($user->brain_hex_secondary) and $user->brain_hex_secondary != "None"): ?>
+					<li><?php echo HTML::image("images/brainhex_icons/".$user->brain_hex_secondary.".png",$user->brain_hex_secondary); ?><br><?php echo e($user->brain_hex_secondary); ?></li>
+					<?php endif; ?>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<h2>The Personal Stuff</h2>
+			<?php echo Markdown::render($user->biography); ?>
+
+		</div>
+	</div>
+	<div class="large-5 columns">
+		<h2>Character List</h2>
+		<table style="width:100%">
+			<tr>
+				<th>Character</th>
+				<th>Level</th>
+				<th>Class</th>
+				<th>Ruleset</th>
+			</tr>
+			<?php foreach($user->characters as $character): ?>
+			<tr>
+				<td><?php echo $character->name; ?></td>
+				<td><?php echo $character->level; ?></td>
+				<td><?php echo $character->class; ?></td>
+				<td><?php echo $character->rules; ?></td>
+			</tr>
+			<?php endforeach; ?>
+		</table>
+		<h2>Game History</h2>
+		<table style="width:100%">
+			<tr>
+				<th>Game</th>
+				<th>Participation Time</th>
+				<th>Ruleset</th>
+				<th>Character</th>
+			</tr>
+			<?php foreach($user->characters as $character): ?>
+			<?php foreach($character->gameHistory as $game): ?>
+			<tr>
+				<td><?php echo $game->game_title; ?></td>
+				<td><?php echo $game->created_at->diffForHumans(\Carbon\Carbon::now()); ?></td>
+				<td><?php echo $game->rules_title; ?></td>
+				<td><?php echo $character->name; ?></td>
+			</tr>
+			<?php endforeach; ?>
+			<?php endforeach; ?>
+
+		</table>
+		<small>* Currently Participating in</small>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

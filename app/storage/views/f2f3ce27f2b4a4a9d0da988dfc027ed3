@@ -1,0 +1,22 @@
+<?php if(!$comments->isEmpty()): ?>
+<?php /* Lazy eager load the user data for each comment, this is for */ ?>
+<?php /* performance reasons to mitigate against the n+1 query problem */ ?>
+<?php $comments->load('user'); ?>
+<ol>
+	<?php foreach($comments as $comment): ?>
+	<li id="C<?php echo $comment->id; ?>">
+		<?php echo nl2br(htmlspecialchars($comment->comment, null, 'UTF-8')); ?>
+
+		<ul class="inline-list">
+			<li>--<?php echo e($comment->user->username); ?> at <?php echo $comment->getDate(); ?></li>
+			<li><a href="#C<?php echo $comment->id; ?>">Permalink</a></li>
+		</ul>
+	</li>
+	<?php endforeach; ?>
+</ol>
+<?php else: ?>
+<p class="no-comments">
+<?php echo trans('laravel-comments::messages.no_comments'); ?>
+
+</p>
+<?php endif; ?>

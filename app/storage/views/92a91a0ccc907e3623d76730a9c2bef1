@@ -1,0 +1,74 @@
+<?php $__env->startSection('content'); ?>
+	<div class="small-12 columns">
+<div class="row">
+	<div class="small-12 columns">
+		<h1>Edit Game<a href="#" class="close-reveal-modal right">&times;</a></h1>
+		<form>
+			<div class="large-6 columns">
+				<label>Game Name</label><input type="text" value="Skalding Shackles">
+				<label>Game Title</label>
+				<input list="game_titles" type="text" value="Pathfinder">
+				<datalist id="game_titles">
+					<option>Dungeons and Dragons 1e</option>
+					<option>Dungeons and Dragons 2e</option>
+					<option>Dungeons and Dragons 3.5e</option>
+					<option>Dungeons and Dragons 4e</option>
+					<option>Dungeons and Dragons Next</option>
+					<option>Pathfinder</option>
+					<option>Dark Heresy</option>
+					<option>Only War</option>
+					<option>Black Crusade</option>
+					<option>Warhammer Fantasy</option>
+					<option>L5R</option>
+					<option>Paranoia</option>
+				</datalist>
+			</div>
+			<div class="large-6 columns">
+				<div class="row collapse">
+					<label>Max Players</label>
+					<div class="small-10 columns">
+						<input type="number" value="5">
+					</div>
+					<div class="small-2 columns">
+						<span class="postfix">Players</span>
+					</div>
+				</div>
+				<label>Location</label>
+				<select>
+					<option disabled>My Locations</option>
+					<option selected>Online</option>
+					<option>My House</option>
+					<option disabled>Public Locations</option>
+					<option>Past Present Future</option>
+					<option>Cool Stuff Inc.</option>
+				</select>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="row">
+	<div class="medium-6 columns">
+		<h1>Transfer Game<a href="#" class="close-reveal-modal right">&times;</a></h1>
+		<form>
+			<label>Transfer Game to...</label>
+			<input type="text">
+			<label>Are you sure? This can not be undone.</label>
+			<input type="checkbox">
+		</form>
+	</div>
+	<div class="medium-6 columns">
+		<h1>Leaving Game<a href="#" class="close-reveal-modal right">&times;</a></h1>
+		<form>
+			<label>Are you sure? This can not be undone.</label>
+			<input type="checkbox">
+		</form>
+	</div>
+</div>
+<div class="row">
+<div class="small-12 columns">
+			<input type="submit" class="button expand">
+</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
